@@ -1,19 +1,15 @@
-import RSVPForm from '@/components/RSVPForm'
+import RSVPWizard from '@/components/RSVPWizard'
 
 export default function RSVPPage() {
   return (
-    <main className="privateRsvpPage">
-      <section className="privateRsvpHero">
-        <p className="eyebrow gold">Robert & Nataliya</p>
-        <h1>Private RSVP</h1>
-        <p>
-          Please confirm your attendance and provide the required guest details.
-        </p>
-      </section>
+    <main className="pageWrap">
+      <p className="smallLabel">Private RSVP</p>
+      <h1>Kindly Respond</h1>
+      <p className="pageText">
+        Please complete the private RSVP sequence below. This is the visual Phase 1 flow.
+      </p>
 
-      <section className="privateRsvpWrap">
-        <RSVPForm />
-      </section>
+      <RSVPWizard />
     </main>
   )
 }

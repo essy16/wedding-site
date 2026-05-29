@@ -1,17 +1,19 @@
 import './globals.css'
-import type { Metadata } from 'next'
+import Header from '@/components/Header'
 
-export const metadata: Metadata = {
-  title: 'Robert & Belén Wedding | Luxury Wedding Website',
-  description: 'A bilingual luxury wedding website with RSVP, travel details, schedule, gallery and guest information.',
-  keywords: ['wedding website', 'RSVP', 'bilingual wedding', 'luxury wedding', 'Spain wedding'],
-  openGraph: {
-    title: 'Robert & Belén Wedding',
-    description: 'Join us for our wedding celebration.',
-    type: 'website'
-  }
+export const metadata = {
+  title: 'Nataliya & Robert Wedding',
+  description:
+    'Wedding website for Nataliya and Robert at Hotel Sant Pere del Bosc, Lloret de Mar.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="en"><body>{children}</body></html>
+  return (
+    <html lang="en">
+      <body>
+        <Header />
+        {children}
+      </body>
+    </html>
+  )
 }

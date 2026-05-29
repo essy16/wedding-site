@@ -33,36 +33,63 @@ export default function RSVPForm() {
   return (
     <form className="rsvpCard" onSubmit={handleSubmit}>
       <div className="formGrid">
-        <input name="full_name" placeholder="Full name" required />
-        <input name="email" type="email" placeholder="Email address" required />
+        <input name="full_name" placeholder="Nombre completo" required />
+
+        <input
+          name="email"
+          type="email"
+          placeholder="Correo electrónico"
+          required
+        />
 
         <select name="attending" required>
-          <option value="">Will you attend?</option>
-          <option value="Yes">Yes, I/we will attend</option>
-          <option value="No">Sorry, I/we cannot attend</option>
+          <option value="">¿Asistirás?</option>
+          <option value="Yes">Sí, asistiré/asistiremos</option>
+          <option value="No">Lo siento, no podré/podremos asistir</option>
         </select>
 
-        <input name="guests" type="number" placeholder="Number of guests" min="1" />
+        <input
+          name="guests"
+          type="number"
+          placeholder="Número de invitados"
+          min="1"
+        />
 
-        <input name="guest_names" className="full" placeholder="Names of all guests" />
+        <input
+          name="guest_names"
+          className="full"
+          placeholder="Nombres de todos los invitados"
+        />
 
-        <input name="dietary" className="full" placeholder="Dietary requirements / allergies" />
+        <input
+          name="dietary"
+          className="full"
+          placeholder="Requisitos alimentarios / alergias"
+        />
 
-        <input name="accessibility" className="full" placeholder="Accessibility needs, if any" />
+        <input
+          name="accessibility"
+          className="full"
+          placeholder="Necesidades de accesibilidad, si las hubiera"
+        />
 
         <textarea
           className="full"
           name="message"
-          placeholder="Message for Robert & Nataliya"
+          placeholder="Mensaje para Robert y Nataliya"
           rows={5}
         />
 
         <button className="submitBtn full" disabled={loading}>
-          {loading ? 'Submitting...' : 'Submit RSVP ♡'}
+          {loading ? 'Enviando...' : 'Enviar RSVP ♡'}
         </button>
       </div>
 
-      {success && <p className="success">Thank you — your RSVP has been received.</p>}
+      {success && (
+        <p className="success">
+          Gracias — hemos recibido tu confirmación de asistencia.
+        </p>
+      )}
     </form>
   )
 }
