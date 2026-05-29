@@ -17,7 +17,9 @@ export default function RSVPForm() {
       email: form.get('email'),
       attending: form.get('attending'),
       guests: form.get('guests'),
+      guest_names: form.get('guest_names'),
       dietary: form.get('dietary'),
+      accessibility: form.get('accessibility'),
       message: form.get('message'),
     }
 
@@ -36,18 +38,22 @@ export default function RSVPForm() {
 
         <select name="attending" required>
           <option value="">Will you attend?</option>
-          <option value="Yes">Yes, joyfully attending</option>
-          <option value="No">Sorry, cannot attend</option>
+          <option value="Yes">Yes, I/we will attend</option>
+          <option value="No">Sorry, I/we cannot attend</option>
         </select>
 
         <input name="guests" type="number" placeholder="Number of guests" min="1" />
 
-        <input className="full" name="dietary" placeholder="Dietary requirements" />
+        <input name="guest_names" className="full" placeholder="Names of all guests" />
+
+        <input name="dietary" className="full" placeholder="Dietary requirements / allergies" />
+
+        <input name="accessibility" className="full" placeholder="Accessibility needs, if any" />
 
         <textarea
           className="full"
           name="message"
-          placeholder="Message for the couple"
+          placeholder="Message for Robert & Nataliya"
           rows={5}
         />
 

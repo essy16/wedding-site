@@ -3,7 +3,9 @@
 import { useState } from 'react'
 import RSVPForm from '@/components/RSVPForm'
 import Reveal from '@/components/Reveal'
-import { content, schedule, Lang } from '@/lib/content'
+import { content, schedule, faqs, Lang } from '@/lib/content'
+
+
 
 export default function HomePage() {
   const [lang, setLang] = useState<Lang>('en')
@@ -31,9 +33,11 @@ export default function HomePage() {
         <div className="heroOverlay" />
         <div className="heroContent">
           <p className="eyebrow">Together with our families</p>
-          <h1>Robert & Bastien</h1>
+          <h1>Robert & Nataliya</h1>
           <p className="heroMeta">29 June 2025 • Marbella, Spain</p>
-          <a href="#rsvp" className="goldBtn">Kindly RSVP</a>
+          <a href="/rsvp" className="goldBtn">{t.cta}</a>
+
+
         </div>
       </section>
 
@@ -91,6 +95,22 @@ export default function HomePage() {
           </div>
         </section>
       </Reveal>
+
+      <Reveal>
+  <section id="faq" className="section faqSection">
+    <p className="eyebrow gold">{t.faqTitle}</p>
+    <h2>Questions & Details</h2>
+
+    <div className="faqGrid">
+      {faqs.map((item) => (
+        <div className="faqCard" key={item.q}>
+          <h3>{item.q}</h3>
+          <p>{item.a}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</Reveal>
 
       <Reveal>
         <section id="rsvp" className="section rsvpSection">
